@@ -1,0 +1,475 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Base colors - warm, inviting theme */
+    --background: 30 40% 98%;
+    --foreground: 25 25% 15%;
+
+    --card: 30 50% 97%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 30 50% 97%;
+    --popover-foreground: 25 25% 15%;
+
+    --primary: 200 85% 45%;
+    --primary-foreground: 30 40% 98%;
+
+    --secondary: 25 30% 88%;
+    --secondary-foreground: 25 25% 15%;
+
+    --muted: 25 20% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 160 40% 75%;
+    --accent-foreground: 25 25% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 40% 98%;
+
+    --border: 25 20% 85%;
+    --input: 25 20% 90%;
+    --ring: 200 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Travel-themed color palette */
+    /* Ocean blues */
+    --ocean-50: 200 100% 97%;
+    --ocean-100: 200 95% 90%;
+    --ocean-200: 200 90% 80%;
+    --ocean-300: 200 85% 70%;
+    --ocean-400: 200 85% 60%;
+    --ocean-500: 200 85% 45%;
+    --ocean-600: 200 80% 35%;
+    --ocean-700: 200 75% 25%;
+    --ocean-800: 200 70% 20%;
+    --ocean-900: 200 65% 15%;
+
+    /* Earthy browns */
+    --earth-50: 25 50% 95%;
+    --earth-100: 25 45% 88%;
+    --earth-200: 25 40% 80%;
+    --earth-300: 25 35% 70%;
+    --earth-400: 25 35% 60%;
+    --earth-500: 25 40% 45%;
+    --earth-600: 25 45% 35%;
+    --earth-700: 25 50% 25%;
+    --earth-800: 25 55% 20%;
+    --earth-900: 25 60% 15%;
+
+    /* Forest greens */
+    --forest-50: 160 60% 95%;
+    --forest-100: 160 55% 88%;
+    --forest-200: 160 50% 80%;
+    --forest-300: 160 45% 70%;
+    --forest-400: 160 40% 60%;
+    --forest-500: 160 40% 45%;
+    --forest-600: 160 45% 35%;
+    --forest-700: 160 50% 25%;
+    --forest-800: 160 55% 20%;
+    --forest-900: 160 60% 15%;
+
+    /* Sunset oranges */
+    --sunset-50: 35 100% 95%;
+    --sunset-100: 35 95% 88%;
+    --sunset-200: 35 90% 80%;
+    --sunset-300: 35 85% 70%;
+    --sunset-400: 35 80% 60%;
+    --sunset-500: 35 75% 50%;
+    --sunset-600: 35 70% 40%;
+    --sunset-700: 35 65% 30%;
+    --sunset-800: 35 60% 25%;
+    --sunset-900: 35 55% 20%;
+  }
+
+  .dark {
+    /* Dark theme with warm travel colors */
+    --background: 25 25% 8%;
+    --foreground: 30 40% 92%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 30 40% 92%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 30 40% 92%;
+
+    --primary: 200 85% 60%;
+    --primary-foreground: 25 25% 8%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 30 40% 92%;
+
+    --muted: 25 20% 15%;
+    --muted-foreground: 25 15% 65%;
+
+    --accent: 160 40% 50%;
+    --accent-foreground: 30 40% 92%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 30 40% 92%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 18%;
+    --ring: 200 85% 60%;
+
+    /* Dark theme travel colors */
+    --ocean-50: 200 50% 15%;
+    --ocean-100: 200 55% 20%;
+    --ocean-200: 200 60% 25%;
+    --ocean-300: 200 65% 35%;
+    --ocean-400: 200 70% 45%;
+    --ocean-500: 200 75% 55%;
+    --ocean-600: 200 80% 65%;
+    --ocean-700: 200 85% 75%;
+    --ocean-800: 200 90% 85%;
+    --ocean-900: 200 95% 95%;
+
+    --earth-50: 25 40% 15%;
+    --earth-100: 25 45% 20%;
+    --earth-200: 25 50% 30%;
+    --earth-300: 25 55% 40%;
+    --earth-400: 25 60% 50%;
+    --earth-500: 25 65% 60%;
+    --earth-600: 25 70% 70%;
+    --earth-700: 25 75% 80%;
+    --earth-800: 25 80% 85%;
+    --earth-900: 25 85% 90%;
+
+    --forest-50: 160 40% 15%;
+    --forest-100: 160 45% 20%;
+    --forest-200: 160 50% 30%;
+    --forest-300: 160 55% 40%;
+    --forest-400: 160 60% 50%;
+    --forest-500: 160 65% 60%;
+    --forest-600: 160 70% 70%;
+    --forest-700: 160 75% 80%;
+    --forest-800: 160 80% 85%;
+    --forest-900: 160 85% 90%;
+
+    --sunset-50: 35 60% 15%;
+    --sunset-100: 35 65% 20%;
+    --sunset-200: 35 70% 30%;
+    --sunset-300: 35 75% 40%;
+    --sunset-400: 35 80% 50%;
+    --sunset-500: 35 85% 60%;
+    --sunset-600: 35 90% 70%;
+    --sunset-700: 35 95% 80%;
+    --sunset-800: 35 100% 85%;
+    --sunset-900: 35 100% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes kenBurns {
+    0% {
+      transform: scale(1.1) translateX(0px) translateY(0px);
+    }
+    25% {
+      transform: scale(1.15) translateX(-10px) translateY(-5px);
+    }
+    50% {
+      transform: scale(1.2) translateX(10px) translateY(-10px);
+    }
+    75% {
+      transform: scale(1.15) translateX(-5px) translateY(5px);
+    }
+    100% {
+      transform: scale(1.1) translateX(5px) translateY(0px);
+    }
+  }
+
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .text-transparent {
+    color: transparent;
+  }
+
+  /* Enhanced scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--ocean-500));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--ocean-600));
+  }
+
+  /* Mobile bottom bar spacing */
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: 80px;
+    }
+  }
+
+  /* Enhanced hover effects */
+  .group:hover .group-hover\:glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+
+  /* Parallax effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Unique Animation Delays */
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .animation-delay-5000 {
+    animation-delay: 5s;
+  }
+  .animation-delay-6000 {
+    animation-delay: 6s;
+  }
+
+  /* Advanced Animation Effects */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    33% {
+      transform: translateY(-10px);
+    }
+    66% {
+      transform: translateY(5px);
+    }
+  }
+
+  @keyframes morphBlob {
+    0%, 100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      transform: scale(1);
+    }
+    25% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+      transform: scale(1.1);
+    }
+    50% {
+      border-radius: 50% 40% 60% 30% / 40% 70% 60% 50%;
+      transform: scale(0.9);
+    }
+    75% {
+      border-radius: 70% 30% 40% 60% / 30% 50% 40% 70%;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-morph {
+    animation: morphBlob 8s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s linear infinite;
+  }
+
+  .animate-slide-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideInFromRight 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  /* 3D Transform Effects */
+  .transform-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: scale(1.05);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: scale(0.95);
+  }
+
+  /* Gradient Text Animation */
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient-text {
+    background: linear-gradient(-45deg, #3b82f6, #10b981, #f59e0b, #ef4444);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Magnetic Button Effect */
+  .magnetic-button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .magnetic-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Staggered Animation Container */
+  .stagger-container > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-container > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-container > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-container > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-container > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-container > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-container > *:nth-child(6) { animation-delay: 0.6s; }
+}
